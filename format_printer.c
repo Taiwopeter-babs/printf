@@ -28,7 +28,9 @@ int format_specifier(const char *format, f_spec func_list[], va_list args_list)
 						return(-1);
 					break;
 				}
+				
 			}
+			i++;
 		}
 		else
 		{
