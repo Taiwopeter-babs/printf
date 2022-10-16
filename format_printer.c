@@ -19,11 +19,11 @@ int format_specifier(const char *format, f_spec f_list[], va_list args_list)
 	{
 		if (format[i] == '%')
 		{
-			for (j = 0; func_list[j].spec != NULL; j++)
+			for (j = 0; f_list[j].spec != NULL; j++)
 			{
-				if (func_list[j].spec[0] == format[i + 1])
+				if (f_list[j].spec[0] == format[i + 1])
 				{
-					count = func_list[j].func(args_list);
+					count = f_list[j].func(args_list);
 					r_value += count;
 					if (r_value == -1)
 						return (-1);
