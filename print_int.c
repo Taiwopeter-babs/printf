@@ -23,6 +23,7 @@ int print_int(va_list num)
         {
                 _putchar('-');
                 number = -n;
+		count++; /* increase count for negative sign */
         }
         else
         {
