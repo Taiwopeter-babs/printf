@@ -12,14 +12,19 @@ int _printf(const char *format, ...)
 		{"c", print_c},
 		{"s", print_str},
 		{"%", print_percent},
+		{"d", print_int},
+		{"i", print_int},
 		{NULL, NULL}
 	};
 	va_list args_list;
 
 	if (format == NULL)
 		return (-1);
+
+	va_start(args_list, format);
+
 	/* function (format_printer) returns the total number printed */
-	total_print = format_printer(format, func_list, args_list);
+	total_print = format_specifier(format, func_list, args_list);
 
 	va_end(args_list);
 	return (total_print);

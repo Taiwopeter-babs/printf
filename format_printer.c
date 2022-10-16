@@ -6,7 +6,8 @@
  * @format: format string that that takes in all chars and specifiers
  * @func_list: has type format_spec; array of struct members
  * i.e specifiers and functions
- * @list: has type va_list; holds the info about format and va_start
+ * @args_list: has type va_list; holds the info about format and va_start
+ * Return: amount of characters printed
  */
 int format_specifier(const char *format, f_spec func_list[], va_list args_list)
 {
