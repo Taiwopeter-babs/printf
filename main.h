@@ -22,6 +22,6 @@ int print_c(va_list ch);
 int print_str(va_list str);
 int print_percent(__attribute__((unused)) va_list percent);
 int _printf(const char *format, ...);
-int format_specifier(const char *format, f_spec func_list[], va_list args_list);
+int format_specifier(const char *format, f_spec f_list[], va_list args_list);
 
 #endif /* MAIN_H */

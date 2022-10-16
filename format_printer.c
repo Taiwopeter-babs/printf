@@ -9,7 +9,7 @@
  * @args_list: has type va_list; holds the info about format and va_start
  * Return: amount of characters printed
  */
-int format_specifier(const char *format, f_spec func_list[], va_list args_list)
+int format_specifier(const char *format, f_spec f_list[], va_list args_list)
 {
 	int i, j, count, r_value;
 
@@ -26,10 +26,10 @@ int format_specifier(const char *format, f_spec func_list[], va_list args_list)
 					count = func_list[j].func(args_list);
 					r_value += count;
 					if (r_value == -1)
-						return(-1);
+						return (-1);
 					break;
 				}
-				
+
 			}
 			i++;
 		}
