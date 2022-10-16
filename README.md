@@ -3,4 +3,5 @@
 
 
 ## Authors
-Taiwo Babalola and Adeola Oloye
+- Taiwo Babalola
+- Adeola Oloye
