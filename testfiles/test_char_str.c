@@ -15,5 +15,7 @@ int main(void)
 
 	len = _printf(":[%c], [%s]\n[%d]\n[%i]\nz: [%d]\n", a, b, n, y, z);
 	_printf("%d\n", len);
+	_printf("%b\n", 68);
+	_printf("%b\n", 98);
 	return (0);
 }
