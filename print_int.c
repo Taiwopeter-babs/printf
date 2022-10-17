@@ -10,39 +10,39 @@
 
 int print_int(va_list num)
 {
-        int n;
-        int divisor;
-        int count;
-        unsigned int number;
+	int n;
+	int divisor;
+	int count;
+	unsigned int number;
 
-        n = va_arg(num, int);
-        divisor = 1;
-        count = 0;
+	n = va_arg(num, int);
+	divisor = 1;
+	count = 0;
 
-        if (n < 0)
-        {
-                _putchar('-');
-                number = -n;
+	if (n < 0)
+	{
+		_putchar('-');
+		number = -n;
 		count++; /* increase count for negative sign */
-        }
-        else
-        {
-                number = n;
-        }
+	}
+	else
+	{
+		number = n;
+	}
 
-        while ((number / divisor) >= 10)
-        {
-                divisor = divisor * 10;
-        }
+	while ((number / divisor) >= 10)
+	{
+		divisor = divisor * 10;
+	}
 
-        while (divisor != 0)
-        {
-                _putchar(number / divisor + '0');
-                count++;
-                number = number % divisor;
-                divisor = divisor / 10;
-        }
-	
+	while (divisor != 0)
+	{
+		_putchar(number / divisor + '0');
+		count++;
+		number = number % divisor;
+		divisor = divisor / 10;
+	}
+
 	return (count);
 }
 
