@@ -1,14 +1,14 @@
 #include "main.h"
-
 /**
  * format_specifier - performs the function choice and sets the format
  * appropriately
  * @format: format string that that takes in all chars and specifiers
- * @func_list: has type format_spec; array of struct members
+ * @f_list: has type format_spec; array of struct members
  * i.e specifiers and functions
- * @list: has type va_list; holds the info about format and va_start
+ * @args_list: has type va_list; holds the info about format and va_start
+ * Return: amount of characters printed
  */
-int format_specifier(const char *format, f_spec func_list[], va_list args_list)
+int format_specifier(const char *format, f_spec f_list[], va_list args_list)
 {
 	int i, j, count, r_value;
 
@@ -18,17 +18,17 @@ int format_specifier(const char *format, f_spec func_list[], va_list args_list)
 	{
 		if (format[i] == '%')
 		{
-			for (j = 0; func_list[j].spec != NULL; j++)
+			for (j = 0; f_list[j].spec != NULL; j++)
 			{
-				if (func_list[j].spec[0] == format[i + 1])
+				if (f_list[j].spec[0] == format[i + 1])
 				{
-					count = func_list[j].func(args_list);
+					count = f_list[j].func(args_list);
 					r_value += count;
 					if (r_value == -1)
-						return(-1);
+						return (-1);
 					break;
 				}
-				
+
 			}
 			i++;
 		}
