@@ -20,5 +20,6 @@ int main(void)
 	len_hex = _printf("hex value of 89255: [%X]\n", 89255);
 	_printf("length of hex value printed: %d\n", len_hex);
 	_printf("oct value of 89255: [%o]\n", 89255);
+	_printf("unsigned integer 89255: [%u]\n", 89255);
 	return (0);
 }
