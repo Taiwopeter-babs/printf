@@ -1,35 +1,52 @@
 #include "main.h"
 #include <stdio.h>
+char *_memcpy(char *dest, char *src, unsigned int n);
 /**
  * rev_string - reverses a string
  * @str: string to be reversed
  * Return: nothing
  */
-void rev_string(char *str)
+char *rev_string(char *str)
 {
 	unsigned int i;
-	char *f_char, *l_char;
+	char *dest_str;
 	char tmp;
 	unsigned int len;
 
-	for (i = 0; str[len] != '\0'; len++)
+	for (len = 0; str[len] != '\0'; len++)
 		;
-	/* set the pointers to the first character of the string */
-	f_char = str;
-	l_char = str;
-	/* move l_char pointer to the end of the string */
-	for (i = 0; i < len - 1; i++)
-		l_char++;
 
-	for (i = 0; i < len / 2; i++)
+	dest_str = malloc(sizeof(char) * len + 1);
+	if (dest_str == NULL)
+		return (NULL);
+
+	_memcpy(dest_str, str, len);
+
+	for (i = 0; i < len; i++, len--)
 	{
-		tmp = *l_char;
-		*l_char = *f_char;
-		*f_char = tmp;
+		tmp = dest_str[len - 1];
+		dest_str[len - 1] = dest_str[i];
+		dest_str[i] = tmp;
+	}
+	return (dest_str);
+}
+/**
+ * _memcpy - copies memory with constant byte
+ * @dest: pointer to destination memory where content will be copied to
+ * @src: pointer to source memory where content will be copied from
+ * @n: number of bytes to copy from src
+ * Return: to resulting pointer string
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int i;
 
-		l_char--;
-		f_char++;
+	i = 0;
+	while (i < n)
+	{
+		*(dest + i) = *(src + i);
+		i++;
 	}
 
-
+	return (dest);
 }

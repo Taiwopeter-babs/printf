@@ -1,35 +1,33 @@
 #include "main.h"
 /**
- * print_bin - converts given number to binary format.
+ * print_oct - converts given number to octal format.
  * @num: the given number to be converted.
  *
- * Return: the number of characters
+ * Return: the number of characters printed
  */
-int print_bin(va_list num)
+int print_oct(va_list num)
 {
-	unsigned int i, n;
-	char buffer[1024];
+	unsigned int n;
+	int i, count;
+	char buffer[100];
 	char *rev_str;
-	int count;
 
 	n = va_arg(num, unsigned int);
 	if (n == 0)
 		return (_putchar('0'));
 	if (n < 1)
 		return (-1);
-
-	for (i = 0; n > 0; i++)
+	i = 0;
+	while (n > 0)
 	{
-		buffer[i] = (n % 2) + '0';
-		n /= 2;
+		buffer[i] = (n % 8) + '0';
+		n /= 8;
+		i++;
 	}
 
 	rev_str = rev_string(buffer);
-	rev_str[i] = '\0';
-
 
 	for (count = 0; rev_str[count] != '\0'; count++)
 		_putchar(rev_str[count]);
-
 	return (count);
 }

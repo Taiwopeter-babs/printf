@@ -25,8 +25,11 @@ int print_str(va_list str);
 int print_percent(__attribute__((unused)) va_list percent);
 int print_int(va_list num);
 int print_bin(va_list num);
-void rev_string(char *str);
+char *rev_string(char *str);
 int _printf(const char *format, ...);
 int format_specifier(const char *format, f_spec f_list[], va_list args_list);
+int print_hex(va_list num);
+int print_HEX(va_list num);
+int print_oct(va_list num);
 
 #endif /* MAIN_H */
