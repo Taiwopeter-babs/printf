@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * format_specifier - performs the function choice and sets the format
  * appropriately
@@ -7,8 +6,7 @@
  * @f_list: has type format_spec; array of struct members
  * i.e specifiers and functions
  * @args_list: has type va_list; holds the info about format and va_start
- *
- * Return: the number of characters printed.
+ * Return: amount of characters printed
  */
 int format_specifier(const char *format, f_spec f_list[], va_list args_list)
 {
