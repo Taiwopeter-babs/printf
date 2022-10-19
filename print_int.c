@@ -45,4 +45,37 @@ int print_int(va_list num)
 
 	return (count);
 }
+/**
+ * print_unsigned - prints unsigned integer format
+ * @num: data type holding the info
+ * Return: number of characters printed
+ */
+int print_unsigned(va_list num)
+{
+	int n;
+	int divisor;
+	int count;
+	unsigned int number;
+
+	n = va_arg(num, int);
+	divisor = 1;
+	count = 0;
+
+	number = n;
+
+	while ((number / divisor) >= 10)
+	{
+		divisor = divisor * 10;
+	}
+
+	while (divisor != 0)
+	{
+		_putchar(number / divisor + '0');
+		count++;
+		number = number % divisor;
+		divisor = divisor / 10;
+	}
+
+	return (count);
+}
 

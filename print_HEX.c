@@ -23,9 +23,13 @@ int print_HEX(va_list num)
 	{
 		idx = n % 16;
 		if (n % 16 > 9)
+		{
 			buffer[i] = hex[idx];
+		}
 		else
+		{
 			buffer[i] = (n % 16) + '0';
+		}
 
 		n /= 16;
 		i++;
