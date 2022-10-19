@@ -27,4 +27,11 @@ int print_bin(va_list num);
 char *rev_string(char *str);
 int _printf(const char *format, ...);
 int format_specifier(const char *format, f_spec f_list[], va_list args_list);
+int print_hex(va_list num);
+int print_HEX(va_list num);
+int print_oct(va_list num);
+int print_unsigned(va_list num);
+int rot13(va_list str);
+int print_rev(va_list str);
+
 #endif /* MAIN_H */
