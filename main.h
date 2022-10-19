@@ -32,4 +32,7 @@ int print_hex(va_list num);
 int print_HEX(va_list num);
 int print_oct(va_list num);
 int print_unsigned(va_list num);
+int rot13(va_list str);
+int print_rev(va_list str);
+
 #endif /* MAIN_H */

@@ -61,7 +61,7 @@ int print_unsigned(va_list num)
 	n = va_arg(num, int);
 	divisor = 1;
 	count = 0;
-	
+
 	number = n;
 
 	while ((number / divisor) >= 10)
