@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * format_specifier - performs the function choice and sets the format
  * appropriately
