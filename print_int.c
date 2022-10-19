@@ -46,9 +46,10 @@ int print_int(va_list num)
 	return (count);
 }
 /**
- * print_unsigned - prints unsigned integer format
- * @num: data type holding the info
- * Return: number of characters printed
+ * print_unsigned - This takes in the integer as argument and prints out
+ * the appropriate format
+ * @num: integer to be taken as argument
+ * Return: total number of characters printed to stdout
  */
 int print_unsigned(va_list num)
 {
@@ -78,4 +79,3 @@ int print_unsigned(va_list num)
 
 	return (count);
 }
-
